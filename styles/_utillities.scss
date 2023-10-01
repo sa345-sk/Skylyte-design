@@ -1,0 +1,273 @@
+@use 'sass:math';
+$base-padding: 5px;
+$base-border-radius: 20px;
+$base-border-thickness: 2px;
+$font-size: 10px;
+$box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+$main-width: 100px;
+@mixin solid($pos) {
+    border-#{$pos}: #a6a89d 1px solid;
+};
+$utils: (
+    'padding': (
+        'prefix': 'p',
+        'values': (
+            '0': 0,
+            '1': $base-padding,
+            '2': $base-padding * 2,
+            '3': $base-padding * 4,
+            '4': $base-padding * 6,
+            '5': $base-padding * 8,
+            '6': $base-padding * 10,
+            '7': $base-padding * 12,
+            '8': $base-padding * 14,
+            '9': $base-padding * 16,
+            '10': $base-padding * 18,
+        ),
+    ),
+    'padding-left': (
+     'prefix': 'pl',
+     'values': (
+        '0': 0,
+       '1': $base-padding,
+       '2': $base-padding * 2,
+       '3': $base-padding * 4,
+       '4': $base-padding * 6,
+       '5': $base-padding * 8,
+        '6': $base-padding * 10,
+        '7': $base-padding * 12,
+        '8': $base-padding * 14,
+        '9': $base-padding * 16,
+        '10': $base-padding * 18,
+      )),
+      'padding-right': (
+        'prefix': 'pr',
+        'values': (
+          '0': 0,
+          '1': $base-padding,
+          '2': $base-padding * 2,
+          '3': $base-padding * 4,
+          '4': $base-padding * 6,
+          '5': $base-padding * 8,
+          '6': $base-padding * 10,
+          '7': $base-padding * 12,
+          '8': $base-padding * 14,
+          '9': $base-padding * 16,
+          '10': $base-padding * 18,
+       ),),
+        'padding-top': (
+            'prefix': 'pt',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+                'nav': 85px,
+            )),
+        'padding-bottom ': (
+            'prefix': 'pb',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+            ),
+        ),
+        'margin': (
+            'prefix': 'm',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+                'a': 0 auto,
+            ),
+        ),
+        'margin-bottom ': (
+            'prefix': 'mb',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+            ),
+        ),
+         'margin-top': (
+            'prefix': 'mt',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+            ),
+        ),
+            'margin-right': (
+            'prefix': 'mr',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+            ),
+        ),
+        'margin-left': (
+            'prefix': 'ml',
+            'values': (
+                '0': 0,
+                '1': $base-padding,
+                '2': $base-padding * 2,
+                '3': $base-padding * 4,
+                '4': $base-padding * 6,
+                '5': $base-padding * 8,
+                '6': $base-padding * 10,
+                '7': $base-padding * 12,
+                '8': $base-padding * 14,
+                '9': $base-padding * 16,
+                '10': $base-padding * 18,
+            ),
+        ),
+        'opacity': (
+            'prefix': 'o',
+            'values': (
+                '10': 0.1,
+                '20': 0.2,
+                '30': 0.3,
+                '40': 0.4,
+                '50': 0.5,
+                '60': 0.6,
+                '70': 0.7,
+                '80': 0.8,
+                '90': 0.9,
+                '100': 1,
+            ),
+        ),
+        'border-radius': (
+            'prefix': 'br',
+            'values': (
+                'default': $base-border-radius,
+               'none': 0,
+            )
+        ),
+        'display': (
+            'prefix': 'd',
+            'values': (
+                'n': 'none',
+                'f': 'flex',
+                'b': 'block',
+                'ib': 'inline-block',
+                'g': 'grid',
+            )
+        ),
+        'width': (
+            'prefix': 'w',
+             'values': (
+                '10': $main-width,
+                '20': $main-width * 2,
+                '30': $main-width * 3,
+                '40': $main-width * 4,
+                '50': $main-width * 5,
+                '60': $main-width * 6,
+                '70': $main-width * 7,
+                '80': $main-width * 8,
+                '90': $main-width * 9,
+                '100': 100%,
+                'f': fit-content,
+             )
+        ),
+            'height': (
+            'prefix': 'h',
+             'values': (
+                '10': $main-width,
+                '20': $main-width * 2,
+                '30': $main-width * 3,
+                '40': $main-width * 4,
+                '50': $main-width * 5,
+                '60': $main-width * 6,
+                '70': $main-width * 7,
+                '80': $main-width * 8,
+                '90': $main-width * 9,
+                '100': 100%,
+                'f': fit-content,
+             ),
+        ),
+        'border-top': (
+            'prefix': 'bt',
+            'values': (
+                's': #a6a89d 1px solid,
+            )
+        ),
+        'border-bottom': (
+            'prefix': 'bb',
+             'values': (
+                's': #a6a89d 1px solid,
+             )
+        ),
+        'font-size': (
+            'prefix': 'fs',
+            'values': (
+                'sm': $font-size,
+                'md': $font-size * 2,
+                'xl': $font-size * 4,
+                'lg': $font-size * 6,
+            )
+        )
+);
+
+@each $property, $map in $utils {
+    $prefix: map-get($map, 'prefix');
+    $values: map-get($map, 'values');
+    @each $key, $val in $values {
+             @if ($key == 'default') {
+            .#{$prefix} {
+                #{$property}: $val;
+            }
+         } @else {
+            .#{$prefix}-#{$key} {
+               #{$property}: $val;
+            }
+         }
+       
+    }
+} 

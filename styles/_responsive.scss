@@ -1,0 +1,23 @@
+$widths: (
+    'cell': 480px,
+    'iPad': 720px,
+    'desktop': 1000px,    
+);
+
+@mixin cell {
+    @media only screen and (min-width: map-get($widths, 'cell')) {
+        @content;
+    }
+}
+
+@mixin iPad {
+    @media only screen and (min-width: map-get($widths, 'iPad')) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: map-get($widths, 'desktop')) {
+        @content;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+.nav {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 1px 1px 1px 1px #757671;
+}
+
+.nav img {
+    width: 100px;
+    height: 85px;
+}
+
+.nav h1 a {
+    padding: 30px 0 0 15px;
+    color: #757671;
+    text-decoration: none;
+}
+
+.nav h1 a:hover {
+    color: #b3ff00;
+}
+
+.nav .links {
+    width: fit-content;
+    height: fit-content;
+    margin: 30px 10px 0 auto;    
+}
+
+.nav .links a {
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+aside {
+  padding-top: 85px;
+  background-color: black;
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  z-index: 500;
+  transition: all 0.5s ease-in-out ;
+}
+
+aside .button {
+    width: 100px;
+    height: 10px;   
+    background-image: url('./img/Button.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 85px;
+    position: fixed;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+aside .button:hover {
+    opacity: 1;
+}
+
+#main {
+    width: 1211px;
+    height: calc(100vh - 100px + 15px);
+    padding: 85px 0 0 100px;
+    z-index: 400;
+}
+
+.selector {
+  width: 250px;
+  height: 200px;
+  background-color: #a8a5a5;
+  padding: 10px 0 0 15px;
+  margin: 10px 0 0 15px;
+}
+.selector:hover {
+  box-shadow: 1px 1px  #6d6969; 
+}
+
+.selector form button {
+    border: 0;
+}
+</style>
+<body>
+    <nav class="nav">
+        <img src="img/skylyteblog logo.png" alt="Skylyte blog">
+        <h1><a href="#">Skylyte Blog</a></h1>
+        <div class="links">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+   <aside>
+    <div class="button" onclick="openSidebar()"></div>
+   </aside>
+   <section id="main">
+    <div class="selector">
+            <p>Add file:</p>
+            <form class="form">
+                <input type="file" name="file">
+                <button>Submit</button>
+            </form>
+    </div>
+   </section>
+</body>
+<script>
+    const aside = document.querySelector('aside');
+    const button = document.querySelector('aside .button');
+    let isOpen = false;
+    const openSidebar = () => {
+        if (isOpen ===  false) {
+            aside.style.width = '300px';
+            isOpen = true;
+        } else if (isOpen === true) {
+            aside.style.width = '100px';
+            isOpen = false;
+        }
+    }
+
+   const form = document.querySelector('.form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+    })
+</script>
+</html>

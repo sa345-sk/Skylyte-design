@@ -1,0 +1,68 @@
+$colors: (
+  'ash': #585858,
+  'links-color': #009e2d,
+  'red': #ff0101,
+  'blue': #0156ff,
+  'yellow': #f2ff01,
+  'green': #52ff01,
+  'white': white,
+  'black': black,
+  'pink': #fa09c6b6,
+);
+
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val;
+     }
+     .text-hover-#{$key} {
+        &:hover {
+            color: $val;
+        }
+     }
+     .bg-#{$key} {
+        background-color: $val;
+      }
+      .bb-#{$key} {
+        border-bottom: $val solid 1px;
+       }
+      .bb-hover-#{$key} {
+        &:hover {
+        box-shadow: 1px 3px 5px $val;
+        }
+      }
+      .border-bottom-#{$key} {
+        border: $val solid 1px;
+       }
+      @if($val != black and $val != white) { 
+//color variations
+      @for $i from 1 through 9 {
+        //Light variations
+        .text-#{$key}-light-#{$i} {
+            color: mix(white, $val, $i * 10%)
+        }
+         .text-hover-#{$key}-light-#{$i} {
+            &:hover { 
+              color: $val;
+            }
+         }   
+        .bg-#{$key}-light-#{$i} {
+            background-color: mix(white, $val, $i * 10%);
+        }
+
+        //Dark Variations
+         .text-#{$key}-dark-#{$i} {
+                color: mix(black, $val, $i * 10%);
+            }
+          .text-hover-#{$key}-dark-#{$i} {
+            &:hover {
+                color: $val;
+            }
+           }
+          .bg-#{$key}-dark-#{$i} {
+                background-color: mix(black, $val, $i * 10%);
+           }
+      }
+    }
+}
+
+  

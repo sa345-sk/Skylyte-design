@@ -1,0 +1,63 @@
+@use 'sass:math';
+$grid-column: 12;
+$grid-gap: (
+   '0': 0px,
+   '1': 10px,
+   '2': 20px,
+   '3': 30px,
+);
+
+$layout-values: flex-end, flex-start, space-between, space-around, center;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+//Gap maps
+@each $key, $val in $grid-gap {
+    .gap-#{$key} > *{
+        padding: $val;
+     }
+     .gap-#{$key} {
+        margin-left: -$val;
+        margin-right: -$val;
+     }
+}
+@mixin col($num, $type) {
+    .col-#{$num}-#{$type} {
+        box-sizing: border-box;
+        flex-grow: 0;
+        width: math.div($num * 100%, $grid-column);
+    }
+}
+//JUstify agnment
+@each $val in $layout-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
+    
+}
+@include cell {
+    @for $i from 1 through $grid-column {
+      @include col($i, cell);
+    }
+}
+
+@include iPad {
+    @for $i from 1 through $grid-column {
+       @include col($i, ipad);
+    }
+}
+
+@include desktop {
+    @for $i from 1 through $grid-column {
+        @include col($i, desktop);
+    }
+}
