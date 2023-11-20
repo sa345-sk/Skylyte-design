@@ -22,4 +22,49 @@
         background-color: $val;
       } 
     }
+    @include cell {
+      .cell-btn-#{$key} {
+        @include btn($val);
+        &:hover {
+          background-color: lighten($val, 5);
+        }
+      }
+      .cell-btn-outlined-#{$key} {
+         @include btn(#fff);
+          border: $base-border-thickness solid $val;
+          &:hover {
+            background-color: $val;
+          }
+      }
+    }
+    @include iPad {
+     .ipad-btn-#{$key} {
+      @include btn($val);  
+        &:hover {
+           background-color: lighten($val, 5);
+         }
+      }  
+      .ipad-btn-outlined-#{$key} {
+       @include btn(#fff);
+        border: $base-border-thickness solid $val;
+        &:hover {
+          background-color: $val;
+        }
+      }
+     }
+     @include desktop {
+     .desktop-btn-#{$key} {
+      @include btn($val);  
+        &:hover {
+           background-color: lighten($val, 5);
+         }
+      }  
+      .desktop-btn-outlined-#{$key} {
+       @include btn(#fff);
+        border: $base-border-thickness solid $val;
+        &:hover {
+          background-color: $val;
+        }
+      }
+     }
 }

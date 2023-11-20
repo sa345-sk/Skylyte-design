@@ -1,11 +1,11 @@
 $widths: (
-    'cell': 480px,
-    'iPad': 720px,
+    'cell': 700px,
+    'iPad': 700px,
     'desktop': 1000px,    
 );
 
 @mixin cell {
-    @media only screen and (min-width: map-get($widths, 'cell')) {
+    @media only screen and (max-width: map-get($widths, 'cell')) {
         @content;
     }
 }

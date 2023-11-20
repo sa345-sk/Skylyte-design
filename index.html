@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Skylyte Design</title>
     <style>
+      @media only screen and (max-width: 600px){
+      #banner {
+            background-position: center;
+            background-repeat:no-repeat; 
+            background-size: cover;
+      }
+      }
       #banner {
             background-position: center;
             background-repeat:no-repeat; 
@@ -24,7 +31,6 @@
           height: 85px;
           display: flex;
           flex-flow: row wrap;
-          background-color: white;
       }
       #banner h2 {
           text-align: center;
@@ -56,7 +62,6 @@
         height: fit-content;
         display: flex;
         flex-flow: column wrap;
-        margin-left:  300px;
       }
 
       footer div .contact {
@@ -64,20 +69,19 @@
                   height: fit-content;
                   display: flex;
                   flex-flow: column wrap;
-                  margin-left: 100px;
       }
 
     </style>
 </head>
 <body>
     <!--THis is the navbar with a background style of white with a title and a link home-->
-    <nav class="navbar bg-white bb-ash bb-hover-ash">
+    <nav class="navbar">
       <div class="container">
-                <h1 class="text-green-dark-3 pt-4"><a href="#">Skylyte Design</a></h1>
+          <h1 class="text-green-dark-3 pt-4 "><a href="#">Skylyte Design</a></h1>
       </div>
     </nav>
     <!-- THIS IS THE BEGINIG OF THE BANNER -->
-  <div id="banner" style="background-image: url('./img/image\ 1.png'); " class="w-100 h-40 pt-nav">
+  <div id="banner" style="background-image: url('./img/image\ 1.png'); " class="w-100 h-40 pt-nav cell-w-100 cell-h-40 ">
     <div class="sub-item w-30 h-f mt-10 mb-4 ml-3">
         <h2><span style="text-shadow: 2px 2px 8px #bababa;">Innovation</span> that is what we do here everyday!</h2>
         <p>Welcome to Skylyte Design.<br>If you an artist who love to design we got your back we will elp you to design more tan you have imagined scroll down the page we will show you some of our design.</p>
@@ -86,7 +90,7 @@
     <!-- THE BANNER ENDS -->
     <!-- THIS IS THE CONTENT SECTION -->
     <section id="contents">
-        <h3 class="text-yellow-dark-3" style="position: absolute; left: 575px;">Some of our desings</h3>
+        <h3 class="text-yellow-dark-3 cell-pt-2 ipad-pt-2 ipad-mb-2 ipad-d-n desktop-d-b">Some of our desings</h3>
       <div class="card m-3" style="max-width: 400px;">
         <h4 class="card-title pb-2">
           Lorem ipsum
@@ -145,34 +149,34 @@
     </section>
     <!-- SECTION ENDS -->
     <!-- BUTTON THAT HAS THE VIEW MORE FUNCTION -->
-          <button class="btn-outlined-green button" onclick="viewer()" style="margin-left: 610px;">View more</button>
+          <button class="btn-outlined-green button cell-ml-3 cell-mb-2 ipad-ml-19"onclick="viewer()">View more</button>
           <!-- ABOUT SECTION -->
           <section id="faq" class="bg-green-light-6 w-100 h-4">
             <div class="container">
-               <h4>About</h4>
+               <h4 class="cell-pt-2 cell-pb-2 ipad-pt-2 ipad-pb-2" style="text-align: center;">About</h4>
                <div>This is a website developed by skylyte inc. The purpose of this site is to make artist design and sculpt their prto types all for free</div>
                <p>We would also appreciate if you Donate to this website it means alot.</p>
-               <button class="btn-blue">Donate</button>
+               <button class="cell-mt-2 cell-mb-2 cell-btn-outlined-red ipad-btn-green ipad-mt-2 ipad-mb-2">Donate</button>
             </div>
           </section>
           <!-- FOOTER SECTION -->
     <footer class="w-100 h-f bg-ash-light-2">
       <div>
-        <div class="social w-f h-f ml-1">
-          <h6 class="bb-s fs-md"> Follow us on social media</h6>
-            <p class="text-hover-blue-dark-1 pt-2"><a href="#">X(Twitter)</a></p>
-            <p class="text-hover-pink-dark-1 pt-2"><a href="#">Instagram</a></p>
-            <p class="text-hover-ash-dark-3 pt-2"><a href="#">Telegram</a></p>
-            <p class="text-hover-blue-light-9 pt-2"><a href="#">Facebook</a></p>
-            <p class="text-hover-red pt-2"><a href="#">Youtube</a></p>
+        <div class="social w-f h-f cell-m-a ipad-ml-16 ipad-mr-5">
+          <h6 class="fs-md cell-m-a bb-s ipad-pb-2"> Follow us on social media<br>(@skylytedesign)</h6>
+            <p class="text-hover-blue-dark-1 pt-2 cell-m-a"><a href="#">X(Twitter)</a></p>
+            <p class="text-hover-pink-dark-1 pt-2 cell-m-a"><a href="#">Instagram</a></p>
+            <p class="text-hover-ash-dark-3 pt-2 cell-m-a"><a href="#">Telegram</a></p>
+            <p class="text-hover-blue-light-9 pt-2 cell-m-a"><a href="#">Facebook</a></p>
+            <p class="text-hover-red pt-2 cell-m-a"><a href="#">Youtube</a></p>
         </div>
-        <div class="contact w-f h-f ml-1">
-          <h6 class="bb-s fs-md">Contact us</h6>
-            <p class="pt-2">Call us on: +2348109695206</p>
-            <p class="pt-2">Email: aliyusangaa@outlook.com</p>
+        <div class="contact w-f h-f cell-m-a cell-mb-2 ">
+          <h6 class="bb-s fs-md ipad-pb-2">Contact us</h6>
+            <p class="pt-2 cell-m-a">Call us on: +2348109695206</p>
+            <p class="pt-2 cell-m-a">Email: aliyusangaa@outlook.com</p>
         </div>
       </div>
-      <p class="copyright w-50 m-a bt-s pt-2 pb-2 pl-3">© Skylyte inc 2023. All rights reserved.</p>
+      <p class="copyright cell-m-a bt-s pt-2 pb-2">© Skylyte inc 2023. All rights reserved.</p>
     </footer>
     <script src="main.js">
     </script>
